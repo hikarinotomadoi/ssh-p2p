@@ -1,7 +1,16 @@
 package signaling
 
-// URI default signaling server
-const URI = "https://nobo-signaling.appspot.com"
+import (
+	"os"
+)
+
+func URI() string {
+	defaultURL := "http://localhost:8080"
+	if url := os.Getenv("SIGNALING_URL"); url != "" {
+		return url
+	}
+	return defaultURL
+}
 
 // ConnectInfo SDP by offer or answer
 type ConnectInfo struct {
