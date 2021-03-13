@@ -3,6 +3,7 @@ module github.com/nobonobo/ssh-p2p
 go 1.16
 
 require (
+	github.com/aws/aws-sdk-go v1.37.30
 	github.com/google/uuid v1.2.0
 	github.com/joho/godotenv v1.3.0
 	github.com/pion/ice/v2 v2.0.15

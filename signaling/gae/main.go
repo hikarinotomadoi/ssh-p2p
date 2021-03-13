@@ -10,6 +10,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/nobonobo/ssh-p2p/signaling"
 )
 
@@ -21,6 +24,20 @@ var (
 )
 
 func main() {
+	svc := dynamodb.New(session.New(&aws.Config{
+		Region: aws.String("us-east-2"),
+	}))
+	input := &dynamodb.ScanInput{
+		TableName: aws.String("ssh-p2p"),
+	}
+
+	result, err := svc.Scan(input)
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+
+	fmt.Println(result)
 	http.Handle("/pull/", http.StripPrefix("/pull/", pullData()))
 	http.Handle("/push/", http.StripPrefix("/push/", pushData()))
 

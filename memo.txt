@@ -1,0 +1,28 @@
+➜ ssh-p2p client -key=$KEY -listen=127.0.0.1:2222
+2021/03/12 22:52:23 main.go:165: listen: 127.0.0.1:2222
+2021/03/12 22:52:30 main.go:262: client id: 6f29a490-2393-4b96-a402-47c6d84c6461
+could not listen udp fe80::841a:25e4:6e38:5eb9
+could not allocate udp6 stun:stun.l.google.com:19302: Failed to create STUN client: dial udp6 [2404:6800:400a:1002::7f]:19302: connect: network is unreachable
+2021/03/12 22:52:30 main.go:295: DataChannel:&{{{0 0} 0 0 0 0} 0xc0000b0000 data true <nil> <nil>  false 0xc0000a0c5e low connecting 0 0 0x6e5e20 0x6e5ca0 0xc0000ae000 <nil>}
+2021/03/12 22:52:30 main.go:300: info: signaling.ConnectInfo{Source:"feb2b948-5900-46b9-916e-da3a033aace5", SDP:"v=0\r\no=- 44297611 1615557150 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=fingerprint:sha-256 E8:CB:BE:C7:2A:7C:5B:90:0E:20:4C:5C:CA:DF:F0:4A:EC:EA:D4:39:15:73:AD:F0:79:ED:55:FE:9C:C2:78:38\r\na=group:BUNDLE data\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=setup:active\r\na=mid:data\r\na=sendrecv\r\na=sctpmap:5000 webrtc-datachannel 1024\r\na=ice-ufrag:DZdOsZrBzySXXPQy\r\na=ice-pwd:LMMbPYrQNirxjttUyooybIBySVWKGXWS\r\na=candidate:foundation 1 udp 41370 192.168.111.64 38425 typ host generation 0\r\na=candidate:foundation 2 udp 64002 192.168.111.64 38425 typ host generation 0\r\na=candidate:foundation 1 udp 29604 172.17.0.1 36917 typ host generation 0\r\na=candidate:foundation 2 udp 28464 172.17.0.1 36917 typ host generation 0\r\na=candidate:foundation 1 udp 32806 172.18.0.1 60042 typ host generation 0\r\na=candidate:foundation 2 udp 32732 172.18.0.1 60042 typ host generation 0\r\na=candidate:foundation 1 udp 53184 198.144.171.38 62716 typ srflx raddr 192.168.111.64 rport 40161 generation 0\r\na=candidate:foundation 2 udp 29840 198.144.171.38 62716 typ srflx raddr 192.168.111.64 rport 40161 generation 0\r\na=end-of-candidates\r\n"}
+2021/03/12 22:52:30 main.go:269: pc ice state change:Checking
+2021/03/12 22:52:32 main.go:269: pc ice state change:Connected
+Warning: Certificate not checked
+Failed to accept data channel: The association is closed
+Failed to read from data channel stream closed
+2021/03/12 22:55:23 main.go:281: disconnected
+
+
+➜ ssh-p2p server -key=$KEY -dial=127.0.0.1:569
+2021/03/12 22:52:00 main.go:194: server started
+2021/03/12 22:52:10 main.go:94: get failed: Get "https://nobo-signaling.appspot.com/pull/feb2b948-5900-46b9-916e-da3a033aace5": net/http: TLS handshake timeout
+2021/03/12 22:52:30 main.go:196: info: signaling.ConnectInfo{Source:"6f29a490-2393-4b96-a402-47c6d84c6461", SDP:"v=0\r\no=- 585002450 1615557150 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=fingerprint:sha-256 EB:1E:E3:6A:2B:80:B3:FB:23:0B:C2:A7:14:5B:3E:AE:7C:6C:4A:30:7C:F3:07:53:00:66:8A:26:54:03:88:3C\r\na=group:BUNDLE data\r\nm=application 9 DTLS/SCTP 5000\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:data\r\na=sendrecv\r\na=sctpmap:5000 webrtc-datachannel 1024\r\na=ice-ufrag:pyqNRPVUGVgMvZSi\r\na=ice-pwd:jpNIdaYIukiQrElwwJrGQlfNyWhLgpOQ\r\na=candidate:foundation 1 udp 21402 192.168.111.64 32830 typ host generation 0\r\na=candidate:foundation 2 udp 20286 192.168.111.64 32830 typ host generation 0\r\na=candidate:foundation 1 udp 19102 172.17.0.1 33045 typ host generation 0\r\na=candidate:foundation 2 udp 55292 172.17.0.1 33045 typ host generation 0\r\na=candidate:foundation 1 udp 30126 172.18.0.1 51424 typ host generation 0\r\na=candidate:foundation 2 udp 19162 172.18.0.1 51424 typ host generation 0\r\na=candidate:foundation 1 udp 49446 198.144.171.38 61232 typ srflx raddr 192.168.111.64 rport 48075 generation 0\r\na=candidate:foundation 2 udp 19986 198.144.171.38 61232 typ srflx raddr 192.168.111.64 rport 48075 generation 0\r\na=end-of-candidates\r\na=setup:actpass\r\n"}
+could not listen udp fe80::841a:25e4:6e38:5eb9
+could not allocate udp6 stun:stun.l.google.com:19302: Failed to create STUN client: dial udp6 [2404:6800:400a:1002::7f]:19302: connect: network is unreachable
+2021/03/12 22:52:30 main.go:209: pc ice state change:Checking
+2021/03/12 22:52:32 main.go:209: pc ice state change:Connected
+2021/03/12 22:52:33 main.go:218: dial:127.0.0.1:569
+Failed to accept data channel: The association is closed
+Failed to read from data channel stream closed
+2021/03/12 22:55:23 main.go:220: disconnected
+
